@@ -53,7 +53,7 @@ public class CustomPageAdapter extends PagerAdapter{
                 ValueAnimator valueAnimator = ValueAnimator.ofFloat(0, 1);
                 valueAnimator.setRepeatMode(ValueAnimator.RESTART);
                 valueAnimator.setRepeatCount(ValueAnimator.INFINITE);
-                valueAnimator.setDuration(4000);
+                valueAnimator.setDuration(3000);
                 mWaveDrawable.setIndeterminateAnimator(valueAnimator);
                 mWaveDrawable.setIndeterminate(true);
                 TextView mTextView = (TextView) layout.findViewById(R.id.water_wave_amt);
