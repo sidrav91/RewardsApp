@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">RewardsApp</string>
+    <string name="saved_water_wave">Saved Water Wave</string>
+    <string name="water_progress_ring">Water Progress</string>
+    <string name="points_counter">Point Counter</string>
+    <string name="available_points_pre">You have</string>
+    <string name="available_points_post">points available</string>
+    <string name="water_wave_pre">You have saved</string>
+</resources>
