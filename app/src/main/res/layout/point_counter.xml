@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorGrey">
@@ -8,29 +7,32 @@
     <TextView
         android:id="@+id/point_counter"
         android:layout_width="220dp"
-        android:layout_height="220dp"
+        android:layout_height="230dp"
+        android:layout_alignTop="@+id/avl_point_pre"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_marginTop="19dp"
         android:fontFamily="@font/oswald_light"
         android:text="TextView"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/colorPrimary"
-        android:textSize="170sp"
-        android:textStyle="italic"
+        android:textColor="@color/colorLight"
+        android:textDirection="ltr"
+        android:textSize="175sp"
+        android:textStyle="bold"
         android:typeface="normal" />
 
     <TextView
         android:id="@+id/avl_point_pre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/point_counter"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:fontFamily="@font/oswald_light"
+        android:layout_marginTop="57dp"
+        android:fontFamily="@font/abel"
         android:text="@string/available_points_pre"
         android:textColor="@color/colorWhite"
-        android:textSize="30sp" />
+        android:textSize="26sp" />
 
     <TextView
         android:id="@+id/avl_point_post"
@@ -38,8 +40,21 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/point_counter"
         android:layout_centerHorizontal="true"
-        android:fontFamily="@font/oswald_light"
+        android:layout_marginTop="39dp"
+        android:fontFamily="@font/abel"
         android:text="@string/available_points_post"
         android:textColor="@color/colorWhite"
-        android:textSize="30sp" />
+        android:textSize="26sp" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/point_counter"
+        android:layout_marginBottom="26dp"
+        android:background="@drawable/button"
+        android:text="@string/redeem_now"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp" />
 </RelativeLayout>

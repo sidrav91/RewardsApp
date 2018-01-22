@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -12,8 +11,8 @@
 
     <ImageView
         android:id="@+id/image"
-        android:layout_width="250dp"
-        android:layout_height="350dp"
+        android:layout_width="200dp"
+        android:layout_height="270dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true" />
 
@@ -23,10 +22,11 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/image"
         android:layout_centerHorizontal="true"
-        android:fontFamily="@font/oswald_light"
+        android:layout_marginBottom="34dp"
+        android:fontFamily="@font/abel"
+        android:textSize="26sp"
         android:text="@string/water_wave_pre"
-        android:textColor="@color/colorWhite"
-        android:textSize="30sp" />
+        android:textColor="@color/colorWhite" />
 
     <TextView
         android:id="@+id/water_wave_amt"
@@ -35,8 +35,18 @@
         android:layout_alignBottom="@+id/image"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="92dp"
-        android:fontFamily="@font/oswald_light"
         android:textColor="@color/colorWhite"
-        android:textSize="30sp" />
+        android:textSize="36sp" />
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/button"
+        android:text="@string/redeem_now"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp" />
 </RelativeLayout>

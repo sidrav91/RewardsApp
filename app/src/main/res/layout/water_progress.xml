@@ -8,46 +8,8 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context="com.sew.rewardsapp.activity.MainActivity">
-
-    <!--<FrameLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-        </RelativeLayout>
-
-        <TextView
-            android:id="@+id/progressText"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="60dp"
-            android:layout_marginTop="90dp"
-            android:text="TextView" />
-
-        <ProgressBar
-            android:id="@+id/graph"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/circle_shape"
-            android:indeterminate="false"
-            android:max="100"
-            android:progressDrawable="@drawable/circular" />
-
-    </FrameLayout>-->
+    tools:context="com.sew.rewardsapp.activity.MainActivity"
+    android:background="@color/colorGrey">
 
 
     <com.app.progresviews.ProgressWheel
@@ -63,5 +25,4 @@
         app:defTextSize="30sp"
         app:marginBtwText="15dp"
         app:progressColor="@color/colorPrimaryDark" />
-
 </RelativeLayout>

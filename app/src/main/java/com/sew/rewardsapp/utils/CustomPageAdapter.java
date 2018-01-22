@@ -2,10 +2,12 @@ package com.sew.rewardsapp.utils;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
+import android.graphics.Typeface;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -31,6 +33,8 @@ public class CustomPageAdapter extends PagerAdapter{
         LayoutInflater inflater = LayoutInflater.from(mContext);
         ViewGroup layout = (ViewGroup) inflater.inflate(modelObject.getLayoutResId(), collection, false);
         Integer usage = 70;
+        Typeface tfArial = Typeface.createFromAsset(mContext.getAssets(), "arial.ttf");
+
 
         switch(position) {
             case 0:
@@ -50,20 +54,16 @@ public class CustomPageAdapter extends PagerAdapter{
                 ValueAnimator valueAnimator = ValueAnimator.ofFloat(0, 1);
                 valueAnimator.setRepeatMode(ValueAnimator.RESTART);
                 valueAnimator.setRepeatCount(ValueAnimator.INFINITE);
-                valueAnimator.setDuration(3000);
+                valueAnimator.setDuration(5000);
                 mWaveDrawable.setIndeterminateAnimator(valueAnimator);
                 mWaveDrawable.setIndeterminate(true);
                 TextView mTextView = (TextView) layout.findViewById(R.id.water_wave_amt);
+                mTextView.setTypeface(tfArial);
                 mTextView.setText(usage.toString() + " L");
+                Button mButtonView = (Button) layout.findViewById(R.id.button);
+                mButtonView.setTypeface(tfArial);
                 break;
             case 1:
-                /*TextView textView = (TextView) layout.findViewById(R.id.progressText);
-                textView.setText(usage.toString() + "%");
-                ProgressBar progressBar = (ProgressBar) layout.findViewById(R.id.graph);
-                ObjectAnimator animation = ObjectAnimator.ofInt(progressBar, "progress", 0, usage);
-                animation.setDuration(2000);
-                animation.setInterpolator(new DecelerateInterpolator());
-                animation.start();*/
                 ProgressWheel progressWheel = (ProgressWheel) layout.findViewById(R.id.wheelprogress);
                 progressWheel.setPercentage(150);
                 progressWheel.setStepCountText("150");
@@ -72,6 +72,8 @@ public class CustomPageAdapter extends PagerAdapter{
             case 2:
                 TextView textView1 = (TextView) layout.findViewById(R.id.point_counter);
                 textView1.setText(usage.toString());
+                Button mButtonView1 = (Button) layout.findViewById(R.id.button1);
+                mButtonView1.setTypeface(tfArial);
                 break;
         }
 
