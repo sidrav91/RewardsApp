@@ -2,7 +2,6 @@ package com.sew.rewardsapp.utils;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
@@ -12,10 +11,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.app.progresviews.ProgressWheel;
 import com.race604.drawable.wave.WaveDrawable;
 import com.sew.rewardsapp.R;
-import com.sew.rewardsapp.activity.RedeemItemsActivity;
 import com.sew.rewardsapp.enums.ModelObject;
 
 /**

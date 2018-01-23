@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import com.sew.rewardsapp.R;
 import com.sew.rewardsapp.activity.MyActivityGrid;
-import com.sew.rewardsapp.activity.RedeemItemsActivity;
 import com.sew.rewardsapp.pojo.RewardItem;
 
 import java.util.List;
@@ -22,7 +21,7 @@ import java.util.List;
 
 public class ProductListAdapterWithCache extends ArrayAdapter<RewardItem> {
     private Context mContext;
-    List<RewardItem> mylist;
+    private List<RewardItem> mylist;
 
     public ProductListAdapterWithCache(Context _context, List<RewardItem> _mylist) {
         super(_context, R.layout.item_display, _mylist);
@@ -68,14 +67,6 @@ public class ProductListAdapterWithCache extends ArrayAdapter<RewardItem> {
         public ImageView img;
         public TextView title;
         public TextView price;
-
-        void populate(RewardItem p) {
-            title.setText(p.getName());
-
-            //
-            ImageDownloader imageDownloader = new ImageDownloader();
-            imageDownloader.download(p.getImageName(), img);
-        }
 
         void populate(RewardItem p, boolean isBusy) {
             title.setText(p.getName());

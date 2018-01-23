@@ -16,8 +16,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.RedeemItemsActivity">
-        </activity>
         <activity android:name=".activity.MyActivityGrid">
         </activity>
         <meta-data
