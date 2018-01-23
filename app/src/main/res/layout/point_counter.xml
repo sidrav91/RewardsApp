@@ -10,7 +10,7 @@
         android:layout_height="230dp"
         android:layout_alignTop="@+id/avl_point_pre"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="19dp"
+        android:layout_marginTop="26dp"
         android:fontFamily="@font/oswald_light"
         android:text="TextView"
         android:textAlignment="center"
@@ -56,5 +56,6 @@
         android:background="@drawable/button"
         android:text="@string/redeem_now"
         android:textColor="@color/colorWhite"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:onClick="redeem"/>
 </RelativeLayout>

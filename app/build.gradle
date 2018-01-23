@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
+    useLibrary 'org.apache.http.legacy'
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.sew.rewardsapp"
@@ -25,7 +26,11 @@ dependencies {
     implementation 'com.android.support:design:26.1.0'
     compile 'com.race604.waveloading:library:1.1.1'
     compile 'com.synnapps:carouselview:0.1.4'
+    compile 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
     compile 'com.zekapp.library:progreswheelview:1.1.2'
+    compile 'com.github.devahamed:multi-view-adapter:1.2.3'
+    compile 'com.github.devahamed:multi-view-adapter-databinding:1.2.3'
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'

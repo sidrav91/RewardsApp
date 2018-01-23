@@ -2,6 +2,7 @@ package com.sew.rewardsapp.utils;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import com.app.progresviews.ProgressWheel;
 import com.race604.drawable.wave.WaveDrawable;
 import com.sew.rewardsapp.R;
+import com.sew.rewardsapp.activity.RedeemItemsActivity;
 import com.sew.rewardsapp.enums.ModelObject;
 
 /**
@@ -37,7 +39,7 @@ public class CustomPageAdapter extends PagerAdapter{
 
 
         switch(position) {
-            case 0:
+            case 1:
                 ImageView mImageView = (ImageView) layout.findViewById(R.id.image);
                 WaveDrawable mWaveDrawable = new WaveDrawable(mContext, R.drawable.glass1);
                 mImageView.setImageDrawable(mWaveDrawable);
@@ -63,13 +65,13 @@ public class CustomPageAdapter extends PagerAdapter{
                 Button mButtonView = (Button) layout.findViewById(R.id.button);
                 mButtonView.setTypeface(tfArial);
                 break;
-            case 1:
+            /*case 1:
                 ProgressWheel progressWheel = (ProgressWheel) layout.findViewById(R.id.wheelprogress);
                 progressWheel.setPercentage(150);
                 progressWheel.setStepCountText("150");
                 progressWheel.setDefText("Litres saved");
-                break;
-            case 2:
+                break;*/
+            case 0:
                 TextView textView1 = (TextView) layout.findViewById(R.id.point_counter);
                 textView1.setText(usage.toString());
                 Button mButtonView1 = (Button) layout.findViewById(R.id.button1);
@@ -81,7 +83,6 @@ public class CustomPageAdapter extends PagerAdapter{
 
         return layout;
     }
-
 
 
     @Override
