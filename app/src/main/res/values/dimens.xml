@@ -1,0 +1,11 @@
+<resources>
+    <dimen name="login_text_size">18sp</dimen>
+    <dimen name="register_text_size">18sp</dimen>
+    <dimen name="register_text_margin">20dp</dimen>
+    <dimen name="register_btn_margin">50dp</dimen>
+
+    <dimen name="icon_length">28dp</dimen>
+    <dimen name="login_field_width">200dp</dimen>
+    <dimen name="login_field_height">28dp</dimen>
+
+</resources>

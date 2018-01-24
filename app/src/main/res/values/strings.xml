@@ -7,4 +7,21 @@
     <string name="available_points_post">points available</string>
     <string name="water_wave_pre">You have saved</string>
     <string name="redeem_now">REDEEM NOW</string>
+    <string name="enter_firstname">First Name</string>
+    <string name="enter_lastname">Last Name</string>
+    <string name="enter_phone">Phone Number</string>
+    <string name="enter_email">Email</string>
+    <string name="enter_address">Home Address</string>
+    <string name="enter_password">Password</string>
+    <string name="register">Register</string>
+    <string name="login">Sign In</string>
+
+    <string-array name="menu">
+        <item>First</item>
+        <item>Second</item>
+        <!-- <item>Third</item>
+        <item>Fourth</item>
+        <item>Fifth</item>
+        <item>Sixth</item> -->
+    </string-array>
 </resources>
