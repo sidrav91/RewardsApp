@@ -6,16 +6,24 @@
     android:background="@color/colorGrey">
 
     <SearchView
-        android:layout_width="200dp"
+        android:id="@+id/searchView"
+        android:layout_width="310dp"
         android:layout_height="40dp"
-        android:id="@+id/searchView" />
+        android:background="@drawable/button"
+        android:outlineProvider="bounds"
+        android:queryHint="Search" />
 
     <TextView
+        android:id="@+id/list_balance_text"
         android:layout_width="70dp"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/grid_products"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:text="$673" />
+        android:background="@color/colorGrey"
+        android:fontFamily="@font/oswald_light"
+        android:textColor="@color/colorLight"
+        android:textDirection="firstStrongLtr"
+        android:textSize="@dimen/redeem_nav_text" />
 
     <GridView
         android:id="@+id/grid_products"
@@ -42,38 +50,66 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:background="@color/colorGrey">
+            android:background="@color/colorGrey"
+            android:orientation="vertical">
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/list_all_btn"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="ALL" />
+                android:layout_height="wrap_content"
+                android:background="#FF918989"
+                android:fontFamily="@font/oswald_light"
+                android:text="ALL"
+                android:textColor="@color/colorLight"
+                android:textSize="@dimen/redeem_nav_text" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/list_bathroom_btn"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_toEndOf="@+id/button2"
-                android:text="BATHROOM" />
+                android:layout_toEndOf="@+id/list_all_btn"
+                android:background="@color/colorGrey"
+                android:fontFamily="@font/oswald_light"
+                android:text="BATHROOM"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/redeem_nav_text" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/list_kitchen_btn"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_toEndOf="@+id/button3"
-                android:text="KITCHEN" />
+                android:layout_toEndOf="@+id/list_bathroom_btn"
+                android:background="@color/colorGrey"
+                android:fontFamily="@font/oswald_light"
+                android:text="KITCHEN"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/redeem_nav_text" />
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/list_garden_btn"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_toEndOf="@+id/button4"
-                android:text="OTHER" />
+                android:layout_toEndOf="@+id/list_kitchen_btn"
+                android:background="@color/colorGrey"
+                android:fontFamily="@font/oswald_light"
+                android:text="GARDEN"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/redeem_nav_text" />
+
+            <Button
+                android:id="@+id/list_other_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/list_garden_btn"
+                android:background="@color/colorGrey"
+                android:fontFamily="@font/oswald_light"
+                android:text="OTHER"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/redeem_nav_text" />
         </RelativeLayout>
     </HorizontalScrollView>
 

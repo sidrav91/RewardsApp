@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.sew.rewardsapp.R;
 import com.sew.rewardsapp.activity.MyActivityGrid;
+import com.sew.rewardsapp.pojo.ItemType;
 import com.sew.rewardsapp.pojo.RewardItem;
 
 import java.util.List;
@@ -28,6 +29,7 @@ public class ProductListAdapterWithCache extends ArrayAdapter<RewardItem> {
 
         mContext = _context;
         this.mylist = _mylist;
+
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -63,6 +65,8 @@ public class ProductListAdapterWithCache extends ArrayAdapter<RewardItem> {
     }
 
 
+
+
     static class ProductViewHolder {
         public ImageView img;
         public TextView title;
@@ -71,7 +75,30 @@ public class ProductListAdapterWithCache extends ArrayAdapter<RewardItem> {
         void populate(RewardItem p, boolean isBusy) {
             title.setText(p.getName());
             price.setText("$"+p.getPrice().toString());
-            img.setImageResource(R.mipmap.ic_launcher);
+            setImageBasedOnType(p.getItemType(), img);
+        }
+
+        private void setImageBasedOnType(ItemType itemType, ImageView imageView) {
+            switch (itemType) {
+                case WASHING_MACHINE:
+                    imageView.setImageResource(R.mipmap.wash);
+                    break;
+                case TAP:
+                    imageView.setImageResource(R.mipmap.taps);
+                    break;
+                case TANK:
+                    imageView.setImageResource(R.mipmap.tank);
+                    break;
+                case FRIDGE:
+                    imageView.setImageResource(R.mipmap.fridge);
+                    break;
+                case MOVIE_TICKET:
+                    imageView.setImageResource(R.mipmap.cinema);
+                    break;
+                case SHOWER_HEAD:
+                    imageView.setImageResource(R.mipmap.shower);
+                    break;
+            }
         }
     }
 

@@ -11,23 +11,26 @@ public class RewardItem {
     private String id;
     private String name;
     private Category category;
+    private ItemType itemType;
     private Double price;
     private Double maxDiscount;
     private String description;
     private String imageName;
 
 
-    public RewardItem(String name, Double price, String imageName) {
+    public RewardItem(String name, Double price, ItemType itemType, String imageName) {
         this.name = name;
         this.price = price;
+        this.itemType = itemType;
         this.imageName = imageName;
     }
 
-    public RewardItem(String id, String name, Category category, Double price, Double maxDiscount, String description, String imageName) {
+    public RewardItem(String id, String name, Category category, Double price, ItemType itemType, Double maxDiscount, String description, String imageName) {
         this.id = id;
         this.name = name;
         this.category = category;
         this.price = price;
+        this.itemType = itemType;
         this.maxDiscount = maxDiscount;
         this.description = description;
         this.imageName = imageName;
@@ -92,5 +95,11 @@ public class RewardItem {
         this.imageName = imageName;
     }
 
+    public ItemType getItemType() {
+        return itemType;
+    }
 
+    public void setItemType(ItemType itemType) {
+        this.itemType = itemType;
+    }
 }

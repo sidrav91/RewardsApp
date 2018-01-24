@@ -1,11 +1,15 @@
 package com.sew.rewardsapp.activity;
 
 import android.app.Activity;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.widget.AbsListView;
+import android.widget.Button;
 import android.widget.GridView;
+import android.widget.TextView;
 
 import com.sew.rewardsapp.R;
+import com.sew.rewardsapp.pojo.ItemType;
 import com.sew.rewardsapp.pojo.RewardItem;
 import com.sew.rewardsapp.utils.ProductListAdapterWithCache;
 
@@ -33,11 +37,11 @@ public class MyActivityGrid extends Activity implements AbsListView.OnScrollList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_grid);
 
-        RewardItem item1 = new RewardItem("Boch Front Load", new Double(700), "http://farm5.staticflickr.com/4142/4787427683_3672f1db9a_s.jpg");
-        RewardItem item2 = new RewardItem("Boch Front Load1", new Double(300), "http://farm5.staticflickr.com/4142/4787427683_3672f1db9a_s.jpg");
-        RewardItem item3 = new RewardItem("Boch Front Load2", new Double(400), "http://farm5.staticflickr.com/4142/4787427683_3672f1db9a_s.jpg");
-        RewardItem item4 = new RewardItem("Boch Front Load3", new Double(500), "http://farm5.staticflickr.com/4142/4787427683_3672f1db9a_s.jpg");
-        RewardItem item5 = new RewardItem("Boch Front Load4", new Double(600), "http://farm5.staticflickr.com/4142/4787427683_3672f1db9a_s.jpg");
+        RewardItem item1 = new RewardItem("Bosch Front Load", new Double(700), ItemType.WASHING_MACHINE, "http://farm5.staticflickr.com/4142/4787427683_3672f1db9a_s.jpg");
+        RewardItem item2 = new RewardItem("Village Movie Voucher", new Double(100), ItemType.MOVIE_TICKET, "http://farm5.staticflickr.com/4142/4787427683_3672f1db9a_s.jpg");
+        RewardItem item3 = new RewardItem("2.5KL Slimline Tank", new Double(1650), ItemType.TANK, "http://farm5.staticflickr.com/4142/4787427683_3672f1db9a_s.jpg");
+        RewardItem item4 = new RewardItem("Bosch showerhead", new Double(80), ItemType.SHOWER_HEAD, "http://farm5.staticflickr.com/4142/4787427683_3672f1db9a_s.jpg");
+        RewardItem item5 = new RewardItem("Simmens Taps", new Double(70), ItemType.TAP, "http://farm5.staticflickr.com/4142/4787427683_3672f1db9a_s.jpg");
 
         products.add(item1);
         products.add(item2);
@@ -49,6 +53,21 @@ public class MyActivityGrid extends Activity implements AbsListView.OnScrollList
         gvProducts = (GridView) findViewById(R.id.grid_products);
         adapterProducts = new ProductListAdapterWithCache(this, products);
         gvProducts.setAdapter(adapterProducts);
+
+        Typeface tfOswald = Typeface.createFromAsset(getAssets(), "oswald.ttf");
+        Button button = (Button) findViewById(R.id.list_all_btn);
+        button.setTypeface(tfOswald);
+        button = (Button) findViewById(R.id.list_bathroom_btn);
+        button.setTypeface(tfOswald);
+        button = (Button) findViewById(R.id.list_garden_btn);
+        button.setTypeface(tfOswald);
+        button = (Button) findViewById(R.id.list_kitchen_btn);
+        button.setTypeface(tfOswald);
+        button = (Button) findViewById(R.id.list_other_btn);
+        button.setTypeface(tfOswald);
+        TextView textView = (TextView) findViewById(R.id.list_balance_text);
+        textView.setTypeface(tfOswald);
+        textView.setText("$673");
 
     }
 
