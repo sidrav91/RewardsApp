@@ -57,10 +57,10 @@
                 android:id="@+id/list_all_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#FF918989"
+                android:background="@color/colorGrey"
                 android:fontFamily="@font/oswald_light"
                 android:text="ALL"
-                android:textColor="@color/colorLight"
+                android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/redeem_nav_text" />
 
             <Button
@@ -100,14 +100,38 @@
                 android:textSize="@dimen/redeem_nav_text" />
 
             <Button
-                android:id="@+id/list_other_btn"
+                android:id="@+id/list_laundry_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_toEndOf="@+id/list_garden_btn"
                 android:background="@color/colorGrey"
                 android:fontFamily="@font/oswald_light"
+                android:text="LAUNDRY"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/redeem_nav_text" />
+
+            <Button
+                android:id="@+id/list_other_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/list_laundry_btn"
+                android:background="@color/colorGrey"
+                android:fontFamily="@font/oswald_light"
                 android:text="OTHER"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/redeem_nav_text" />
+
+            <Button
+                android:id="@+id/list_fun_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/list_other_btn"
+                android:background="@color/colorGrey"
+                android:fontFamily="@font/oswald_light"
+                android:text="FUN"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="@dimen/redeem_nav_text" />
         </RelativeLayout>

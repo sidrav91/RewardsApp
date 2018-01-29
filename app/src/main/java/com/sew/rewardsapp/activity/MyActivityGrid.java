@@ -3,10 +3,12 @@ package com.sew.rewardsapp.activity;
 import android.app.Activity;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.AbsListView;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import com.sew.rewardsapp.R;
 import com.sew.rewardsapp.pojo.ItemType;
@@ -20,7 +22,7 @@ import java.util.List;
  * Created by siddharthkumar on 23/1/18.
  */
 
-public class MyActivityGrid extends Activity implements AbsListView.OnScrollListener {
+public class MyActivityGrid extends AppCompatActivity implements AbsListView.OnScrollListener {
     List<RewardItem> products = new ArrayList<RewardItem>();
     GridView gvProducts = null;
     ProductListAdapterWithCache adapterProducts;
@@ -62,6 +64,10 @@ public class MyActivityGrid extends Activity implements AbsListView.OnScrollList
         button = (Button) findViewById(R.id.list_garden_btn);
         button.setTypeface(tfOswald);
         button = (Button) findViewById(R.id.list_kitchen_btn);
+        button.setTypeface(tfOswald);
+        button = (Button) findViewById(R.id.list_laundry_btn);
+        button.setTypeface(tfOswald);
+        button = (Button) findViewById(R.id.list_fun_btn);
         button.setTypeface(tfOswald);
         button = (Button) findViewById(R.id.list_other_btn);
         button.setTypeface(tfOswald);

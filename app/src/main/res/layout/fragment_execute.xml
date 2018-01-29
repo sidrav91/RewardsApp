@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="25dp"
+    android:paddingVertical="25dp">
+
+
+    <TextView
+        android:id="@+id/cp_balance_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="CP Balance:"
+        android:textSize="@dimen/text_size" />
+
+    <TextView
+        android:id="@+id/cp_balance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="59dp"
+        android:layout_marginStart="59dp"
+        android:layout_toEndOf="@+id/cp_balance_label"
+        android:layout_toRightOf="@+id/cp_balance_label"
+        android:text="80000"
+        android:textSize="@dimen/text_size" />
+
+
+    <TextView
+        android:id="@+id/order_type_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/toggle2"
+        android:text="Order Type:"
+        android:textSize="@dimen/text_size" />
+
+    <RadioGroup
+        android:id="@+id/toggle2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/cp_balance"
+        android:layout_alignStart="@+id/cp_balance"
+        android:layout_below="@+id/cp_balance"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/pink_out_line"
+        android:checkedButton="@+id/sell_type"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/buy_type"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="1dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_weight="1"
+            android:background="@drawable/toggle_widget_background"
+            android:button="@null"
+            android:gravity="center"
+            android:text="Buy"
+            android:textColor="@color/colorWhite" />
+
+        <RadioButton
+            android:id="@+id/sell_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_weight="1"
+            android:background="@drawable/toggle_widget_background"
+            android:button="@null"
+            android:gravity="center"
+            android:text="Sell"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_size" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/quantity_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/quantity"
+        android:layout_alignBottom="@+id/quantity"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="Quantity:"
+        android:textSize="@dimen/text_size" />
+
+    <TextView
+        android:id="@+id/quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/toggle2"
+        android:layout_alignStart="@+id/toggle2"
+        android:layout_below="@+id/toggle2"
+        android:layout_marginTop="29dp"
+        android:text="80000"
+        android:textSize="@dimen/text_size" />
+
+
+    <TextView
+        android:id="@+id/price_switch_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/quantity_label"
+        android:layout_marginTop="30dp"
+        android:text="Price Type:"
+        android:textSize="@dimen/text_size" />
+
+
+    <RadioGroup
+        android:id="@+id/toggle1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/quantity"
+        android:layout_alignStart="@+id/quantity"
+        android:layout_below="@+id/quantity"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/pink_out_line"
+        android:checkedButton="@+id/market_type"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/limit_type"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="1dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_weight="1"
+            android:background="@drawable/toggle_widget_background"
+            android:button="@null"
+            android:gravity="center"
+            android:text="Limit"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_size" />
+
+        <RadioButton
+            android:id="@+id/market_type"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_weight="1"
+            android:background="@drawable/toggle_widget_background"
+            android:button="@null"
+            android:gravity="center"
+            android:text="Market"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_size" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/price_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/price"
+        android:layout_alignBottom="@+id/price"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="Price:"
+        android:textSize="@dimen/text_size" />
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/toggle1"
+        android:layout_alignStart="@+id/toggle1"
+        android:layout_below="@+id/toggle1"
+        android:layout_marginTop="25dp"
+        android:text="80000"
+        android:textSize="@dimen/text_size" />
+
+
+    <TextView
+        android:id="@+id/expiry_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/price_label"
+        android:layout_marginTop="29dp"
+        android:text="Expiry:"
+        android:textSize="@dimen/text_size" />
+
+    <RadioGroup
+        android:id="@+id/toggle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/price"
+        android:layout_alignStart="@+id/price"
+        android:layout_below="@+id/price"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/pink_out_line"
+        android:checkedButton="@+id/until_day"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/until_expiry"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="1dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_weight="1"
+            android:background="@drawable/toggle_widget_background"
+            android:button="@null"
+            android:gravity="center"
+            android:text="Good until expiry"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_size" />
+
+        <RadioButton
+            android:id="@+id/until_day"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_weight="1"
+            android:background="@drawable/toggle_widget_background"
+            android:button="@null"
+            android:gravity="center"
+            android:text="Good for a day"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_size" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/price"
+        android:layout_alignRight="@+id/price"
+        android:layout_below="@+id/toggle"
+        android:layout_marginTop="47dp"
+        android:text="Execute" />
+
+</RelativeLayout>

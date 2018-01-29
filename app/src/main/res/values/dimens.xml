@@ -8,5 +8,10 @@
     <dimen name="icon_length">28dp</dimen>
     <dimen name="login_field_width">200dp</dimen>
     <dimen name="login_field_height">28dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
 
+    <dimen name="text_size">18dp</dimen>
 </resources>

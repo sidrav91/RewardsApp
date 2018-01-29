@@ -58,7 +58,7 @@ public class ProductListAdapterWithCache extends ArrayAdapter<RewardItem> {
 
 
         //
-        holder.populate(product, ((MyActivityGrid)mContext).isLvBusy());
+        holder.populate(product);
 
         //
         return convertView;
@@ -72,7 +72,7 @@ public class ProductListAdapterWithCache extends ArrayAdapter<RewardItem> {
         public TextView title;
         public TextView price;
 
-        void populate(RewardItem p, boolean isBusy) {
+        void populate(RewardItem p) {
             title.setText(p.getName());
             price.setText("$"+p.getPrice().toString());
             setImageBasedOnType(p.getItemType(), img);
