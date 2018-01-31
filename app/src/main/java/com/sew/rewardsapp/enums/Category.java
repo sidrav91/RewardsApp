@@ -5,5 +5,5 @@ package com.sew.rewardsapp.enums;
  */
 
 public enum Category {
-    BATHROOM, KITCHEN, OTHER;
+    BATHROOM, GARDEN, KITCHEN, FUN, LAUNDRY, OTHER;
 }

@@ -8,13 +8,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity">
-        </activity>
-        <activity android:name=".activity.MyActivityGrid">
-        </activity>
-        <activity android:name=".activity.RegisterActivity">
-
-        </activity>
+        <activity android:name=".activity.MainActivity"></activity>
+        <activity android:name=".activity.RegisterActivity"></activity>
         <activity android:name=".activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,9 +17,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <activity android:name=".activity.ItemViewActivity"></activity>
     </application>
 
 </manifest>

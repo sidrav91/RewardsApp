@@ -2,9 +2,9 @@ package com.sew.rewardsapp.fragment;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +14,8 @@ import android.widget.GridView;
 import android.widget.TextView;
 
 import com.sew.rewardsapp.R;
-import com.sew.rewardsapp.pojo.ItemType;
 import com.sew.rewardsapp.pojo.RewardItem;
+import com.sew.rewardsapp.utils.MyData;
 import com.sew.rewardsapp.utils.ProductListAdapterWithCache;
 
 import java.util.ArrayList;
@@ -32,6 +32,8 @@ public class RedeemFragment extends Fragment implements AbsListView.OnScrollList
     ProductListAdapterWithCache adapterProducts;
     Typeface tfOswald;
 
+
+
     private boolean lvBusy = false;
 
     @Nullable
@@ -43,6 +45,8 @@ public class RedeemFragment extends Fragment implements AbsListView.OnScrollList
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        Toolbar toolbar = (Toolbar) getActivity().findViewById(R.id.toolbar);
+        toolbar.setTitle("Redeem");
         setOnClickListenersForButtons(view);
         tfOswald = Typeface.createFromAsset(getActivity().getAssets(), "oswald.ttf");
         changeTabToAll(view);
@@ -89,7 +93,7 @@ public class RedeemFragment extends Fragment implements AbsListView.OnScrollList
 
         //
         gvProducts = (GridView) getView().findViewById(R.id.grid_products);
-        adapterProducts = new ProductListAdapterWithCache(getContext(), getAllProducts());
+        adapterProducts = new ProductListAdapterWithCache(getContext(), MyData.items);
         gvProducts.setAdapter(adapterProducts);
     }
 
@@ -148,105 +152,30 @@ public class RedeemFragment extends Fragment implements AbsListView.OnScrollList
 
         switch(view.getId()) {
             case R.id.list_all_btn:
-                products = getAllProducts();
+                products = MyData.items;
                 break;
             case R.id.list_bathroom_btn:
-                products = getBathroomProducts();
+                products = MyData.bathItems;
                 break;
             case R.id.list_kitchen_btn:
-                products = getKitchenProducts();
+                products = MyData.kitchenItems;
                 break;
             case R.id.list_laundry_btn:
-                products = getLaundryProducts();
+                products = MyData.laundryItems;
                 break;
             case R.id.list_garden_btn:
-                products = getGardenProducts();
+                products = MyData.gardenItems;
                 break;
             case R.id.list_other_btn:
-                products = getOtherProducts();
+                products = MyData.otherItems;
                 break;
             case R.id.list_fun_btn:
-                products = getFunProducts();
+                products = MyData.funItems;
                 break;
         }
 
         gvProducts = (GridView) getView().findViewById(R.id.grid_products);
         adapterProducts = new ProductListAdapterWithCache(getContext(), products);
         gvProducts.setAdapter(adapterProducts);
-    }
-
-    @NonNull
-    private List<RewardItem> getAllProducts() {
-        List<RewardItem> products = new ArrayList<RewardItem>();
-        RewardItem item1 = new RewardItem("Bosch Front Load", new Double(700), ItemType.WASHING_MACHINE, "http://farm5.staticflickr.com/4142/4787427683_3672f1db9a_s.jpg");
-        RewardItem item2 = new RewardItem("Village Movie Voucher", new Double(100), ItemType.MOVIE_TICKET, "http://farm5.staticflickr.com/4142/4787427683_3672f1db9a_s.jpg");
-        RewardItem item3 = new RewardItem("2.5KL Slimline Tank", new Double(1650), ItemType.TANK, "http://farm5.staticflickr.com/4142/4787427683_3672f1db9a_s.jpg");
-        RewardItem item4 = new RewardItem("Bosch showerhead", new Double(80), ItemType.SHOWER_HEAD, "http://farm5.staticflickr.com/4142/4787427683_3672f1db9a_s.jpg");
-        RewardItem item5 = new RewardItem("Simmens Taps", new Double(70), ItemType.TAP, "http://farm5.staticflickr.com/4142/4787427683_3672f1db9a_s.jpg");
-
-        products.add(item1);
-        products.add(item2);
-        products.add(item3);
-        products.add(item4);
-        products.add(item5);
-        return products;
-    }
-
-    @NonNull
-    private List<RewardItem> getBathroomProducts() {
-        List<RewardItem> products = new ArrayList<RewardItem>();
-        RewardItem item4 = new RewardItem("Bosch showerhead", new Double(80), ItemType.SHOWER_HEAD, "http://farm5.staticflickr.com/4142/4787427683_3672f1db9a_s.jpg");
-        RewardItem item5 = new RewardItem("Simmens Taps", new Double(70), ItemType.TAP, "http://farm5.staticflickr.com/4142/4787427683_3672f1db9a_s.jpg");
-
-        products.add(item4);
-        products.add(item5);
-        return products;
-    }
-
-    @NonNull
-    private List<RewardItem> getKitchenProducts() {
-        List<RewardItem> products = new ArrayList<RewardItem>();
-        RewardItem item5 = new RewardItem("Simmens Taps", new Double(70), ItemType.TAP, "http://farm5.staticflickr.com/4142/4787427683_3672f1db9a_s.jpg");
-
-        products.add(item5);
-        return products;
-    }
-
-    @NonNull
-    private List<RewardItem> getGardenProducts() {
-        List<RewardItem> products = new ArrayList<RewardItem>();
-        RewardItem item3 = new RewardItem("2.5KL Slimline Tank", new Double(1650), ItemType.TANK, "http://farm5.staticflickr.com/4142/4787427683_3672f1db9a_s.jpg");
-
-        products.add(item3);
-        return products;
-    }
-
-    @NonNull
-    private List<RewardItem> getLaundryProducts() {
-        List<RewardItem> products = new ArrayList<RewardItem>();
-        RewardItem item1 = new RewardItem("Bosch Front Load", new Double(700), ItemType.WASHING_MACHINE, "http://farm5.staticflickr.com/4142/4787427683_3672f1db9a_s.jpg");
-
-        products.add(item1);
-        return products;
-    }
-
-    @NonNull
-    private List<RewardItem> getOtherProducts() {
-        List<RewardItem> products = new ArrayList<RewardItem>();
-        RewardItem item3 = new RewardItem("2.5KL Slimline Tank", new Double(1650), ItemType.TANK, "http://farm5.staticflickr.com/4142/4787427683_3672f1db9a_s.jpg");
-        RewardItem item4 = new RewardItem("Bosch showerhead", new Double(80), ItemType.SHOWER_HEAD, "http://farm5.staticflickr.com/4142/4787427683_3672f1db9a_s.jpg");
-
-        products.add(item3);
-        products.add(item4);
-        return products;
-    }
-
-    @NonNull
-    private List<RewardItem> getFunProducts() {
-        List<RewardItem> products = new ArrayList<RewardItem>();
-        RewardItem item2 = new RewardItem("Village Movie Voucher", new Double(100), ItemType.MOVIE_TICKET, "http://farm5.staticflickr.com/4142/4787427683_3672f1db9a_s.jpg");
-
-        products.add(item2);
-        return products;
     }
 }

@@ -1,6 +1,5 @@
 package com.sew.rewardsapp.activity;
 
-import android.content.Intent;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -34,7 +33,6 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         getSupportActionBar().hide();
-        //setSupportActionBar(toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -138,7 +136,5 @@ public class MainActivity extends AppCompatActivity
 
     public void redeem(View view){
         displaySelectedScreen(R.id.nav_redeem);
-        /*Intent homeIntent = new Intent(this, MyActivityGrid.class);
-        startActivity(homeIntent);*/
     }
 }

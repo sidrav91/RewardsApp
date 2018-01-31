@@ -1,6 +1,7 @@
 package com.sew.rewardsapp.utils;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.sew.rewardsapp.R;
-import com.sew.rewardsapp.activity.MyActivityGrid;
-import com.sew.rewardsapp.pojo.ItemType;
+import com.sew.rewardsapp.activity.ItemViewActivity;
 import com.sew.rewardsapp.pojo.RewardItem;
 
 import java.util.List;
@@ -33,12 +33,13 @@ public class ProductListAdapterWithCache extends ArrayAdapter<RewardItem> {
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
-        RewardItem product = getItem(position);
+        final RewardItem product = getItem(position);
 
         ProductViewHolder holder;
 
         if (convertView == null) {
             convertView = new LinearLayout(getContext());
+
             String inflater = Context.LAYOUT_INFLATER_SERVICE;
             LayoutInflater vi = (LayoutInflater)getContext().getSystemService(inflater);
             convertView = vi.inflate(R.layout.item_display, parent, false);
@@ -51,16 +52,24 @@ public class ProductListAdapterWithCache extends ArrayAdapter<RewardItem> {
 
             //
             convertView.setTag(holder);
+
         }
         else{
             holder = (ProductViewHolder) convertView.getTag();
         }
 
 
-        //
+        convertView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), ItemViewActivity.class);
+                intent.putExtra("product", product);
+                getContext().startActivity(intent);
+            }
+        });
+
         holder.populate(product);
 
-        //
         return convertView;
     }
 
@@ -75,30 +84,7 @@ public class ProductListAdapterWithCache extends ArrayAdapter<RewardItem> {
         void populate(RewardItem p) {
             title.setText(p.getName());
             price.setText("$"+p.getPrice().toString());
-            setImageBasedOnType(p.getItemType(), img);
-        }
-
-        private void setImageBasedOnType(ItemType itemType, ImageView imageView) {
-            switch (itemType) {
-                case WASHING_MACHINE:
-                    imageView.setImageResource(R.mipmap.wash);
-                    break;
-                case TAP:
-                    imageView.setImageResource(R.mipmap.taps);
-                    break;
-                case TANK:
-                    imageView.setImageResource(R.mipmap.tank);
-                    break;
-                case FRIDGE:
-                    imageView.setImageResource(R.mipmap.fridge);
-                    break;
-                case MOVIE_TICKET:
-                    imageView.setImageResource(R.mipmap.cinema);
-                    break;
-                case SHOWER_HEAD:
-                    imageView.setImageResource(R.mipmap.shower);
-                    break;
-            }
+            img.setImageResource(p.getImageResource());
         }
     }
 

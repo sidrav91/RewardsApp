@@ -25,4 +25,7 @@
     <string name="about_part1">At South East Water we want to reward you for saving water. Every drop you save makes a difference to our rivers, streams and the environment.</string>
     <string name="about_part2">For every litre of water that your household saves you are awarded a credit point. You can redeem these points in the form of discounts off products in our store.</string>
 
+    <string name="my_cart">My Cart</string>
+    <string name="delete">DELETE</string>
+
 </resources>

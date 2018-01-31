@@ -8,5 +8,10 @@
     <color name="colorWhite">#ffffff</color>
     <color name="colorGrey">#555255</color>
     <color name="colorLightGrey">#e2e2e2</color>
+
+    <color name="bg_row_background">#fa315b</color>
+    <color name="item_name">#535353</color>
+    <color name="description">#a9a9a9</color>
+
 </resources>
 
