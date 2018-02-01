@@ -52,7 +52,7 @@ public class RedeemFragment extends Fragment implements AbsListView.OnScrollList
         changeTabToAll(view);
         TextView textView = (TextView) getView().findViewById(R.id.list_balance_text);
         textView.setTypeface(Typeface.createFromAsset(getActivity().getAssets(), "oswald.ttf"));
-        textView.setText("$673");
+        textView.setText("$"+MyData.balance);
 
         super.onViewCreated(view, savedInstanceState);
         //you can set the title for your toolbar here for different fragments different title

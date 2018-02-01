@@ -24,10 +24,16 @@ public class MyData {
     public static List<RewardItem> laundryItems = new ArrayList<RewardItem>();
     public static List<RewardItem> funItems = new ArrayList<RewardItem>();
     public static List<RewardItem> otherItems = new ArrayList<RewardItem>();
-    public static Double balance = new Double(130);
+    public static Integer balance = new Integer(130);
+    public static Integer subtotal = new Integer(0);
+    public static Integer point_used = new Integer(0);
+    public static Integer shipping = new Integer(30);
+    public static Integer total = new Integer(0);
     public static List<CartItem> cartItems = new ArrayList<CartItem>();
 
     public static Map<String, RewardItem> itemMap = new HashMap<String, RewardItem>();
+
+    public static RewardItem buffer;
 
     static {
         String desc = "The primary avenue for government assistance was the Rural Adjustment Scheme (RAS, previously termed the Farmers’ Debt Adjustment scheme and also the Rural Reconstruction schemes) and the Farm Household Support Scheme (FHSS). The RAS adopted structural adjustment initiatives to improve farm productivity, profitability and sustainability. These initiatives included interest rate subsidies, commercial borrowings, and small grants, all of which were subject to substantial increases under a provision of EC. The FHSS, however, was aimed at encouraging unviable farmers to exit the industry (Botterill and Wilhite, 2005). Together, the policy framework was viewed as a holistic response to recurrent drought events.";
@@ -75,10 +81,10 @@ public class MyData {
         CartItem cartItem2 = new CartItem(item2.getName(), new Double(item2.getPrice()-item2.getMaxDiscount()), item2.getImageResource(), toInt(item2.getMaxDiscount()));
         CartItem cartItem3 = new CartItem(item3.getName(), new Double(item3.getPrice()-item3.getMaxDiscount()), item3.getImageResource(), toInt(item3.getMaxDiscount()));
         CartItem cartItem4 = new CartItem(item4.getName(), new Double(item4.getPrice()-item4.getMaxDiscount()), item4.getImageResource(), toInt(item4.getMaxDiscount()));
-        cartItems.add(cartItem1);
+        /*cartItems.add(cartItem1);
         cartItems.add(cartItem2);
         cartItems.add(cartItem3);
-        cartItems.add(cartItem4);
+        cartItems.add(cartItem4);*/
 
     }
 

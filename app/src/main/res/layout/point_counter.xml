@@ -6,13 +6,13 @@
 
     <TextView
         android:id="@+id/point_counter"
-        android:layout_width="220dp"
+        android:layout_width="wrap_content"
         android:layout_height="230dp"
         android:layout_alignTop="@+id/avl_point_pre"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="26dp"
         android:fontFamily="@font/oswald_light"
-        android:text="TextView"
+        android:text=""
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -51,11 +51,11 @@
         android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/point_counter"
-        android:layout_marginBottom="26dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
         android:background="@drawable/button"
+        android:onClick="redeem"
         android:text="@string/redeem_now"
         android:textColor="@color/colorWhite"
-        android:textSize="20sp"
-        android:onClick="redeem"/>
+        android:textSize="20sp" />
 </RelativeLayout>

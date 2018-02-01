@@ -1,6 +1,7 @@
 package com.sew.rewardsapp.utils;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,7 +33,6 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.MyView
         public MyViewHolder(View view) {
             super(view);
             name = view.findViewById(R.id.name);
-            description = view.findViewById(R.id.description);
             price = view.findViewById(R.id.price);
             thumbnail = view.findViewById(R.id.thumbnail);
             viewBackground = view.findViewById(R.id.view_background);
@@ -58,8 +58,11 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.MyView
     public void onBindViewHolder(MyViewHolder holder, final int position) {
         final CartItem item = cartList.get(position);
         holder.name.setText(item.getName());
+        Typeface arial = Typeface.createFromAsset(context.getAssets(), "arial.ttf");
+        holder.name.setTypeface(arial);
         //holder.description.setText(item.getPointsUsed().toString());
-        holder.price.setText("₹" + item.getPurchasePrice().toString());
+        holder.price.setText("$"+item.getPurchasePrice().toString());
+        holder.price.setTypeface(arial, Typeface.BOLD);
 
         Glide.with(context)
                 .load(item.getImageResource())

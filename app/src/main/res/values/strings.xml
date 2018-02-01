@@ -28,4 +28,15 @@
     <string name="my_cart">My Cart</string>
     <string name="delete">DELETE</string>
 
+    <string-array name="state_array">
+        <item>VIC</item>
+        <item>NT</item>
+        <item>NSW</item>
+        <item>TAS</item>
+        <item>ACT</item>
+        <item>QLD</item>
+        <item>WA</item>
+        <item>SA</item>
+    </string-array>
+
 </resources>

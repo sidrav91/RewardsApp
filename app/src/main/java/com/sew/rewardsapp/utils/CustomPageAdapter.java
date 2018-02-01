@@ -70,7 +70,7 @@ public class CustomPageAdapter extends PagerAdapter{
                 break;*/
             case 0:
                 TextView textView1 = (TextView) layout.findViewById(R.id.point_counter);
-                textView1.setText(usage.toString());
+                textView1.setText(""+MyData.balance);
                 Button mButtonView1 = (Button) layout.findViewById(R.id.button1);
                 mButtonView1.setTypeface(tfArial);
                 break;

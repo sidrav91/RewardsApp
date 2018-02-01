@@ -1,5 +1,6 @@
 package com.sew.rewardsapp.fragment;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -48,6 +49,9 @@ public class OrdersFragment extends Fragment implements View.OnClickListener, Re
     private List<CartItem> cartList;
     private CartListAdapter mAdapter;
     private CoordinatorLayout coordinatorLayout;
+    Double total;
+    Double total_wo_disc = new Double(0);
+    Integer pointsUsed = 0;
 
     @Nullable
     @Override
@@ -70,7 +74,17 @@ public class OrdersFragment extends Fragment implements View.OnClickListener, Re
         //you can set the title for your toolbar here for different fragments different title
         getActivity().setTitle("Shopping Cart");
 
+        total = new Double(0);
+        for(CartItem cartItem : MyData.cartItems){
+            total_wo_disc += cartItem.getPurchasePrice() + cartItem.getPointsUsed();
+            total += cartItem.getPurchasePrice();
+            pointsUsed += cartItem.getPointsUsed();
+        }
 
+        computeTotals();
+
+        TextView payable = getActivity().findViewById(R.id.textView6);
+        payable.setText("$"+total);
 
         recyclerView = getActivity().findViewById(R.id.recycler_view);
         coordinatorLayout = getActivity().findViewById(R.id.coordinator_layout);
@@ -97,6 +111,12 @@ public class OrdersFragment extends Fragment implements View.OnClickListener, Re
 
     }
 
+    private void computeTotals() {
+        MyData.subtotal = MyData.toInt(total_wo_disc);
+        MyData.point_used = pointsUsed;
+        MyData.total = MyData.subtotal - MyData.point_used + MyData.shipping;
+    }
+
     private void prepareCart() {
         cartList.clear();
         cartList.addAll(MyData.cartItems);
@@ -111,12 +131,15 @@ public class OrdersFragment extends Fragment implements View.OnClickListener, Re
         button.setBackgroundColor(color);
         button.setTextColor(view.getResources().getColor(R.color.colorLight));
         button.setTypeface(arial);
+        button.setAllCaps(false);
         button = (Button) getView().findViewById(R.id.orders_address);
         button.setBackgroundColor(color);
+        button.setAllCaps(false);
         button.setTextColor(view.getResources().getColor(R.color.colorWhite));
         button.setTypeface(arial);
         button = (Button) getView().findViewById(R.id.orders_payment);
         button.setBackgroundColor(color);
+        button.setAllCaps(false);
         button.setTextColor(view.getResources().getColor(R.color.colorWhite));
         button.setTypeface(arial);
     }
@@ -128,6 +151,8 @@ public class OrdersFragment extends Fragment implements View.OnClickListener, Re
         button.setOnClickListener(this);
         button = (Button) getView().findViewById(R.id.orders_payment);
         button.setOnClickListener(this);
+        TextView textView = getView().findViewById(R.id.continue_btn);
+        textView.setOnClickListener(this);
     }
 
 
@@ -147,6 +172,9 @@ public class OrdersFragment extends Fragment implements View.OnClickListener, Re
                 break;
             case R.id.orders_payment:
                 fragment = new PaymentFragment();
+                break;
+            case R.id.continue_btn:
+                fragment = new AddressFragment();
                 break;
         }
         replaceFragment(fragment);
@@ -173,6 +201,13 @@ public class OrdersFragment extends Fragment implements View.OnClickListener, Re
 
             // backup of removed item for undo purpose
             final CartItem deletedItem = cartList.get(viewHolder.getAdapterPosition());
+            total -= deletedItem.getPurchasePrice();
+            total_wo_disc -= deletedItem.getPurchasePrice() + deletedItem.getPointsUsed();
+            TextView payable = getActivity().findViewById(R.id.textView6);
+            payable.setText("$"+total);
+            MyData.balance+=deletedItem.getPointsUsed();
+            MyData.cartItems.remove(deletedItem);
+            computeTotals();
             final int deletedIndex = viewHolder.getAdapterPosition();
 
             // remove the item from recycler view
@@ -187,6 +222,12 @@ public class OrdersFragment extends Fragment implements View.OnClickListener, Re
 
                     // undo is selected, restore the deleted item
                     mAdapter.restoreItem(deletedItem, deletedIndex);
+                    total += deletedItem.getPurchasePrice();
+                    MyData.balance-=deletedItem.getPointsUsed();
+                    MyData.cartItems.add(deletedItem);
+                    TextView payable = getActivity().findViewById(R.id.textView6);
+                    payable.setText("$"+total);
+                    computeTotals();
                 }
             });
             snackbar.setActionTextColor(Color.YELLOW);

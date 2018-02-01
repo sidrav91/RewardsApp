@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.TextView;
 
 import com.sew.rewardsapp.R;
 import com.sew.rewardsapp.pojo.CartItem;
@@ -62,14 +63,17 @@ public class PaymentFragment extends Fragment implements View.OnClickListener {
         button.setBackgroundColor(color);
         button.setTextColor(view.getResources().getColor(R.color.colorWhite));
         button.setTypeface(arial);
+        button.setAllCaps(false);
         button = (Button) getView().findViewById(R.id.orders_address);
         button.setBackgroundColor(color);
         button.setTextColor(view.getResources().getColor(R.color.colorWhite));
         button.setTypeface(arial);
+        button.setAllCaps(false);
         button = (Button) getView().findViewById(R.id.orders_payment);
         button.setBackgroundColor(color);
         button.setTextColor(view.getResources().getColor(R.color.colorLight));
         button.setTypeface(arial);
+        button.setAllCaps(false);
     }
 
     private void setOnClickListenersForButtons(View view) {
@@ -79,6 +83,8 @@ public class PaymentFragment extends Fragment implements View.OnClickListener {
         button.setOnClickListener(this);
         button = (Button) getView().findViewById(R.id.orders_payment);
         button.setOnClickListener(this);
+        TextView textView = getView().findViewById(R.id.continue_btn);
+        textView.setOnClickListener(this);
     }
 
 
@@ -96,6 +102,9 @@ public class PaymentFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.orders_address:
                 fragment = new AddressFragment();
+                break;
+            case R.id.continue_btn:
+                fragment = new PaymentConfirmFragment();
                 break;
             case R.id.orders_payment:
                 return;

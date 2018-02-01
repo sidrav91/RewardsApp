@@ -1,7 +1,11 @@
 package com.sew.rewardsapp.utils;
 
 import android.content.Context;
-import android.content.Intent;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.sew.rewardsapp.R;
-import com.sew.rewardsapp.activity.ItemViewActivity;
+import com.sew.rewardsapp.fragment.ItemViewFragment;
 import com.sew.rewardsapp.pojo.RewardItem;
 
 import java.util.List;
@@ -62,9 +66,19 @@ public class ProductListAdapterWithCache extends ArrayAdapter<RewardItem> {
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getContext(), ItemViewActivity.class);
-                intent.putExtra("product", product);
-                getContext().startActivity(intent);
+
+                MyData.buffer = product;
+
+
+                Fragment fragment = new ItemViewFragment();
+                if (fragment != null) {
+                    FragmentTransaction ft = ((FragmentActivity)getContext()).getSupportFragmentManager().beginTransaction();
+                    ft.replace(R.id.content_frame, fragment);
+                    ft.commit();
+                }
+
+                DrawerLayout drawer = (DrawerLayout) ((FragmentActivity)getContext()).findViewById(R.id.drawer_layout);
+                drawer.closeDrawer(GravityCompat.START);
             }
         });
 

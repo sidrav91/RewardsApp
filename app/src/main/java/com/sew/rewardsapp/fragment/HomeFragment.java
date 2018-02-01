@@ -19,6 +19,7 @@ import android.widget.TextView;
 import com.race604.drawable.wave.WaveDrawable;
 import com.sew.rewardsapp.R;
 import com.sew.rewardsapp.utils.CustomPageAdapter;
+import com.sew.rewardsapp.utils.MyData;
 
 /**
  * Created by siddharthkumar on 3/1/18.

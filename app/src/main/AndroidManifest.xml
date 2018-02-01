@@ -22,7 +22,6 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".activity.ItemViewActivity"></activity>
     </application>
 
 </manifest>

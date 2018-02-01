@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
@@ -60,12 +61,11 @@
         android:background="@color/colorLightGrey"
         android:paddingLeft="20dp"
         android:paddingTop="4dp"
-        android:text="Shipping Address"
         android:textSize="17sp" />
 
     <FrameLayout
         android:layout_width="300dp"
-        android:layout_height="150dp"
+        android:layout_height="170dp"
         android:layout_alignStart="@+id/textView4"
         android:layout_below="@+id/textView4"
         android:background="@color/colorWhite">
@@ -81,18 +81,43 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="11dp"
-                android:text="Mrs Jane Doe"
+                android:layout_marginTop="10dp"
+                android:text="Subtotal"
+                android:textColor="@android:color/black"
                 android:textSize="17sp" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="0.25dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/address_name"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/colorLightGrey" />
+
 
             <TextView
                 android:id="@+id/address_line1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignStart="@+id/address_name"
-                android:layout_centerVertical="true"
-                android:text="1 Wells Road"
+                android:layout_below="@+id/address_name"
+                android:layout_marginTop="12dp"
+                android:text="Points Redeemed"
+                android:textColor="@android:color/black"
                 android:textSize="17sp" />
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="0.25dp"
+                android:layout_alignStart="@+id/view3"
+                android:layout_below="@+id/address_line1"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/colorLightGrey" />
 
             <TextView
                 android:id="@+id/address_line2"
@@ -100,17 +125,79 @@
                 android:layout_height="wrap_content"
                 android:layout_alignStart="@+id/address_line1"
                 android:layout_below="@+id/address_line1"
-                android:text="Frankston, VIC, 3199"
+                android:layout_marginTop="11dp"
+                android:text="Shipping"
+                android:textColor="@android:color/black"
                 android:textSize="17sp" />
 
+            <View
+                android:id="@+id/view3"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_alignStart="@+id/view"
+                android:layout_below="@+id/address_line2"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/colorPrimary" />
+
             <TextView
-                android:id="@+id/change_address_btn"
+                android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
+                android:layout_alignStart="@+id/address_line2"
+                android:layout_below="@+id/address_line2"
+                android:layout_marginTop="12dp"
+                android:text="Total"
+                android:textColor="@android:color/black"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.25dp"
+                android:layout_alignStart="@+id/view3"
+                android:layout_below="@+id/total_text"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/subtotal_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:text="Change"
-                android:textColor="@color/colorLightGrey" />
+                android:layout_alignTop="@+id/address_name"
+                android:layout_marginEnd="35dp"
+                android:text="sdfsfg"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/points_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/address_line1"
+                android:layout_alignStart="@+id/subtotal_text"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                tools:text="sdfsdfsf" />
+
+            <TextView
+                android:id="@+id/shipping_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/address_line2"
+                android:layout_alignStart="@+id/points_text"
+                android:text="TextView"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/total_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/textView9"
+                android:layout_alignStart="@+id/shipping_text"
+                android:text="TextView"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
         </RelativeLayout>
     </FrameLayout>
 
@@ -130,7 +217,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="15dp"
         android:fontFamily="@font/abel"
-        android:text="Continue"
+        android:text="Place Order"
         android:textColor="@color/colorWhite"
         android:textSize="24sp" />
 

@@ -54,26 +54,28 @@
             android:fontFamily="sans-serif-medium"
             android:maxLines="1"
             android:textColor="@color/item_name"
-            android:textSize="17dp" />
-
-        <TextView
-            android:id="@+id/description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/name"
-            android:layout_marginTop="5dp"
-            android:layout_toRightOf="@id/thumbnail"
-            android:textColor="@color/description"
-            android:textSize="12dp" />
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
+            android:layout_below="@id/name"
+            android:layout_marginTop="5dp"
             android:layout_toRightOf="@id/thumbnail"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16dp"
             android:textStyle="bold" />
+
+        <!--<TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/thumbnail"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:text="yolo"/>-->
 
     </RelativeLayout>
 </FrameLayout>
