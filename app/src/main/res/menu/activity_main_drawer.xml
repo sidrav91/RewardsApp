@@ -15,7 +15,7 @@
             android:title="Redeem" />
         <item
             android:id="@+id/nav_orders"
-            android:title="Your Orders" />
+            android:title="Shopping Cart" />
         <item
             android:id="@+id/nav_settings"
             android:title="Settings" />
