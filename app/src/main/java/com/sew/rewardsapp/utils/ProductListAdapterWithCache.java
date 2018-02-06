@@ -53,6 +53,7 @@ public class ProductListAdapterWithCache extends ArrayAdapter<RewardItem> {
             holder.img = (ImageView)convertView.findViewById(R.id.item_image);
             holder.title = (TextView)convertView.findViewById(R.id.reward_item_title);
             holder.price = (TextView)convertView.findViewById(R.id.reward_item_price);
+            holder.oldPrice = (TextView)convertView.findViewById(R.id.old_price);
 
             //
             convertView.setTag(holder);
@@ -94,11 +95,13 @@ public class ProductListAdapterWithCache extends ArrayAdapter<RewardItem> {
         public ImageView img;
         public TextView title;
         public TextView price;
+        public TextView oldPrice;
 
         void populate(RewardItem p) {
             title.setText(p.getName());
-            price.setText("$"+p.getPrice().toString());
+            price.setText("$"+(p.getPrice()-Math.min(p.getMaxDiscount(), MyData.balance)));
             img.setImageResource(p.getImageResource());
+            oldPrice.setText("$"+p.getPrice().toString());
         }
     }
 

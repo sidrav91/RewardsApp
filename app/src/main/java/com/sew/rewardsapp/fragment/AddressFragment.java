@@ -46,8 +46,10 @@ public class AddressFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        Toolbar toolbar = (Toolbar) getActivity().findViewById(R.id.toolbar);
-        toolbar.setTitle("Checkout");
+        Typeface tfAbel = Typeface.createFromAsset(getActivity().getAssets(), "abel.ttf");
+        TextView textView1= (TextView) getActivity().findViewById(R.id.toolbar_title);
+        textView1.setText("Checkout");
+        textView1.setTypeface(tfAbel);
         setOnClickListenersForButtons(view);
         arial = Typeface.createFromAsset(getActivity().getAssets(), "arial.ttf");
         resetAllButtons(view);
@@ -127,8 +129,9 @@ public class AddressFragment extends Fragment implements View.OnClickListener {
         //replacing the fragment
         if (fragment != null) {
             FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.content_frame, fragment);
+            ft.replace(R.id.content_frame, fragment).addToBackStack(null);
             ft.commit();
+            ft.addToBackStack(null);
         }
 
         DrawerLayout drawer = (DrawerLayout) getActivity().findViewById(R.id.drawer_layout);

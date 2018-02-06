@@ -2,6 +2,7 @@ package com.sew.rewardsapp.fragment;
 
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
+import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -39,8 +40,10 @@ public class HomeFragment extends Fragment{
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        Toolbar toolbar = (Toolbar) getActivity().findViewById(R.id.toolbar);
-        toolbar.setTitle("");
+        Typeface tfAbel = Typeface.createFromAsset(getActivity().getAssets(), "abel.ttf");
+        TextView textView1= (TextView) getActivity().findViewById(R.id.toolbar_title);
+        textView1.setText("");
+        textView1.setTypeface(tfAbel);
         ViewPager viewPager = (ViewPager) getView().findViewById(R.id.viewpager);
         viewPager.setAdapter(new CustomPageAdapter(getContext()));
         super.onViewCreated(view, savedInstanceState);

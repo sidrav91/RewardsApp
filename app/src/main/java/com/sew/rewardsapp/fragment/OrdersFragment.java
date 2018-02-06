@@ -1,6 +1,5 @@
 package com.sew.rewardsapp.fragment;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -20,14 +19,12 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsListView;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
 
 import com.sew.rewardsapp.R;
 import com.sew.rewardsapp.pojo.CartItem;
-import com.sew.rewardsapp.pojo.RewardItem;
 import com.sew.rewardsapp.utils.CartListAdapter;
 import com.sew.rewardsapp.utils.MyData;
 import com.sew.rewardsapp.utils.ProductListAdapterWithCache;
@@ -64,8 +61,10 @@ public class OrdersFragment extends Fragment implements View.OnClickListener, Re
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        Toolbar toolbar = (Toolbar) getActivity().findViewById(R.id.toolbar);
-        toolbar.setTitle("Shopping Cart");
+        Typeface tfAbel = Typeface.createFromAsset(getActivity().getAssets(), "abel.ttf");
+        TextView textView1= (TextView) getActivity().findViewById(R.id.toolbar_title);
+        textView1.setText("Shopping Cart");
+        textView1.setTypeface(tfAbel);
         setOnClickListenersForButtons(view);
         arial = Typeface.createFromAsset(getActivity().getAssets(), "arial.ttf");
         resetAllButtons(view);
@@ -113,8 +112,8 @@ public class OrdersFragment extends Fragment implements View.OnClickListener, Re
 
     private void computeTotals() {
         MyData.subtotal = MyData.toInt(total_wo_disc);
-        MyData.point_used = pointsUsed;
-        MyData.total = MyData.subtotal - MyData.point_used + MyData.shipping;
+        MyData.pointUsed = pointsUsed;
+        MyData.total = MyData.subtotal - MyData.pointUsed + MyData.shipping;
     }
 
     private void prepareCart() {
@@ -185,8 +184,9 @@ public class OrdersFragment extends Fragment implements View.OnClickListener, Re
         //replacing the fragment
         if (fragment != null) {
             FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.content_frame, fragment);
+            ft.replace(R.id.content_frame, fragment).addToBackStack(null);
             ft.commit();
+            ft.addToBackStack(null);
         }
 
         DrawerLayout drawer = (DrawerLayout) getActivity().findViewById(R.id.drawer_layout);

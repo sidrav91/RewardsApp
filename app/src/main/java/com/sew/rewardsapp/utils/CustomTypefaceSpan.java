@@ -15,10 +15,12 @@ import com.sew.rewardsapp.R;
 public class CustomTypefaceSpan extends TypefaceSpan {
 
     private final Typeface newType;
+    private static int color;
 
-    public CustomTypefaceSpan(String family, Typeface type) {
+    public CustomTypefaceSpan(String family, Typeface type, int color) {
         super(family);
         newType = type;
+        this.color = color;
     }
 
     @Override
@@ -51,7 +53,7 @@ public class CustomTypefaceSpan extends TypefaceSpan {
         //paint.setTextSize(R.dimen.nav_text_size);
         paint.setTypeface(tf);
         paint.setTextSize(60);
-        paint.setColor(Color.WHITE);
+        paint.setColor(color);
 
     }
 }

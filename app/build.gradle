@@ -36,6 +36,8 @@ dependencies {
     compile 'com.zekapp.library:progreswheelview:1.1.2'
     compile 'com.github.devahamed:multi-view-adapter:1.2.3'
     compile 'com.github.devahamed:multi-view-adapter-databinding:1.2.3'
+    compile 'pl.droidsonroids.gif:android-gif-drawable:1.2.10'
+    compile 'com.ms-square:expandableTextView:0.1.4'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'

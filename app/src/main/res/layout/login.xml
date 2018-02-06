@@ -8,11 +8,11 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="75dp"
         app:srcCompat="@mipmap/sew_rewards_logo" />
 
 
@@ -21,8 +21,8 @@
         android:layout_width="@dimen/login_field_width"
         android:layout_height="@dimen/login_field_height"
         android:layout_below="@+id/imageView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="136dp"
+        android:layout_marginTop="92dp"
+        android:layout_toEndOf="@+id/imageView2"
         android:background="@color/colorWhite"
         android:hint="@string/enter_email"
         android:inputType="textEmailAddress"
@@ -44,18 +44,18 @@
         android:id="@+id/imageView2"
         android:layout_width="@dimen/icon_length"
         android:layout_height="@dimen/icon_length"
+        android:layout_alignStart="@+id/imageView"
         android:layout_alignTop="@+id/email"
-        android:layout_toStartOf="@+id/email"
         android:background="@color/colorWhite"
         app:srcCompat="@mipmap/name_icon" />
 
     <Button
         android:id="@+id/register_from_login"
-        android:layout_width="wrap_content"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/imageView"
+        android:layout_alignStart="@+id/imageView3"
         android:layout_below="@+id/password"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="31dp"
         android:background="@color/colorGrey"
         android:onClick="registerNewUser"
         android:text="@string/register"
@@ -75,11 +75,11 @@
 
     <Button
         android:id="@+id/login_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/register_from_login"
         android:layout_alignBottom="@+id/register_from_login"
-        android:layout_alignEnd="@+id/imageView"
+        android:layout_alignEnd="@+id/password"
         android:background="@color/colorGrey"
         android:onClick="signIn"
         android:text="@string/login"
@@ -95,7 +95,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="23dp"
-        android:text="Forgot password?"
+        android:text="@string/forgot_password"
         android:textColor="@color/colorLight" />
 
 

@@ -21,7 +21,7 @@
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:text="Water Saved"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/colorLightGrey"
         android:textSize="12sp" />
 
     <TextView
@@ -46,7 +46,7 @@
         android:layout_marginStart="28dp"
         android:layout_toEndOf="@+id/water_saved_label"
         android:text="Points"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/colorLightGrey"
         android:textSize="12sp" />
 
     <TextView
@@ -69,7 +69,7 @@
         android:layout_marginStart="47dp"
         android:layout_toEndOf="@+id/points_text"
         android:text="Redeemed"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/colorLightGrey"
         android:textSize="12sp"
         android:textStyle="normal" />
 

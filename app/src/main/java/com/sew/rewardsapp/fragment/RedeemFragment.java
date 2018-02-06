@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.sew.rewardsapp.R;
@@ -45,14 +46,21 @@ public class RedeemFragment extends Fragment implements AbsListView.OnScrollList
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        Toolbar toolbar = (Toolbar) getActivity().findViewById(R.id.toolbar);
-        toolbar.setTitle("Redeem");
+        /*Toolbar toolbar = (Toolbar) getActivity().findViewById(R.id.toolbar);
+        toolbar.setTitle("Redeem");*/
+        TextView textView1= (TextView) getActivity().findViewById(R.id.toolbar_title);
+        textView1.setText("Redeem");
+        textView1.setTypeface(Typeface.createFromAsset(getActivity().getAssets(), "abel.ttf"));
         setOnClickListenersForButtons(view);
         tfOswald = Typeface.createFromAsset(getActivity().getAssets(), "oswald.ttf");
         changeTabToAll(view);
         TextView textView = (TextView) getView().findViewById(R.id.list_balance_text);
         textView.setTypeface(Typeface.createFromAsset(getActivity().getAssets(), "oswald.ttf"));
         textView.setText("$"+MyData.balance);
+
+        SearchView searchView = getActivity().findViewById(R.id.searchView);
+        searchView.getBackground().setAlpha(64);
+
 
         super.onViewCreated(view, savedInstanceState);
         //you can set the title for your toolbar here for different fragments different title
@@ -89,6 +97,7 @@ public class RedeemFragment extends Fragment implements AbsListView.OnScrollList
         resetAllButtons(view);
         Button button = (Button) getView().findViewById(R.id.list_all_btn);
         button.setBackgroundColor(view.getResources().getColor(R.color.colorLightGrey));
+        button.getBackground().setAlpha(64);
         button.setTypeface(tfOswald);
 
         //
@@ -146,6 +155,7 @@ public class RedeemFragment extends Fragment implements AbsListView.OnScrollList
 
         Button button = (Button) getView().findViewById(view.getId());
         button.setBackgroundColor(view.getResources().getColor(R.color.colorLightGrey));
+        button.getBackground().setAlpha(64);
         button.setTypeface(tfOswald);
 
         List<RewardItem> products = new ArrayList<RewardItem>();

@@ -6,11 +6,20 @@
     android:orientation="vertical"
     android:background="@color/colorGrey">
 
+    <View
+        android:id="@+id/view"
+        android:layout_width="500dp"
+        android:layout_height="0.5dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorLightGrey" />
+
     <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_alignParentStart="true"
-        android:id="@+id/horizontalScrollView">
+        android:id="@+id/horizontalScrollView"
+        android:layout_below="@+id/view">
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -293,6 +302,14 @@
         android:text="Continue"
         android:textColor="@color/colorWhite"
         android:textSize="24sp" />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="500dp"
+        android:layout_height="0.5dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/horizontalScrollView"
+        android:background="@color/colorLightGrey" />
 
 
 </RelativeLayout>

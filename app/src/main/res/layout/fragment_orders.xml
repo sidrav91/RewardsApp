@@ -7,11 +7,31 @@
     android:orientation="vertical"
     android:background="@color/colorGrey">
 
+    <ImageView
+        android:layout_width="380dp"
+        android:layout_height="400dp"
+        android:layout_alignBottom="@+id/textView5"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="-50dp"
+        android:alpha="0.3"
+        android:scaleType="centerCrop"
+        app:srcCompat="@mipmap/trolley" />
+
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="500dp"
+        android:layout_height="0.5dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorLightGrey" />
+
     <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_alignParentStart="true"
-        android:id="@+id/horizontalScrollView">
+        android:layout_below="@+id/view">
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -23,7 +43,7 @@
                 android:id="@+id/orders_products"
                 android:layout_width="138dp"
                 android:layout_height="wrap_content"
-                android:background="@color/colorGrey"
+                android:background="@android:color/transparent"
                 android:text="Products"
                 android:textColor="@color/colorWhite"
                 android:textSize="@dimen/redeem_nav_text" />
@@ -34,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_toEndOf="@+id/orders_products"
-                android:background="@color/colorGrey"
+                android:background="@android:color/transparent"
                 android:text="Address"
                 android:textColor="@color/colorWhite"
                 android:textSize="@dimen/redeem_nav_text" />
@@ -45,12 +65,22 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_toEndOf="@+id/orders_address"
-                android:background="@color/colorGrey"
+                android:background="@android:color/transparent"
                 android:text="Payment"
                 android:textColor="@color/colorWhite"
                 android:textSize="@dimen/redeem_nav_text" />
+
+
         </RelativeLayout>
     </HorizontalScrollView>
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="500dp"
+        android:layout_height="0.5dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/horizontalScrollView"
+        android:background="@color/colorLightGrey" />
 
     <android.support.design.widget.CoordinatorLayout
         android:id="@+id/coordinator_layout"
@@ -77,6 +107,8 @@
                     android:layout_height="match_parent"
                     android:scrollbars="vertical" />
             </LinearLayout>
+
+
         </ScrollView>
 
     </android.support.design.widget.CoordinatorLayout>
@@ -101,6 +133,21 @@
         android:textColor="@color/colorWhite"
         android:textSize="24sp" />
 
+    <View
+        android:id="@+id/view1"
+        android:layout_width="500dp"
+        android:layout_height="0.25dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/view2"
+        android:layout_marginTop="-1dp"
+        android:background="@color/colorLightGrey" />
+    <View
+        android:id="@+id/view2"
+        android:layout_width="500dp"
+        android:layout_height="40dp"
+        android:layout_above="@+id/continue_btn"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorGrey" />
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"

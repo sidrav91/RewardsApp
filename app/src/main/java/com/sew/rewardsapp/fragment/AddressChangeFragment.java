@@ -109,8 +109,9 @@ public class AddressChangeFragment extends Fragment implements View.OnClickListe
         //replacing the fragment
         if (fragment != null) {
             FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.content_frame, fragment);
+            ft.replace(R.id.content_frame, fragment).addToBackStack(null);
             ft.commit();
+            ft.addToBackStack(null);
         }
 
         DrawerLayout drawer = (DrawerLayout) getActivity().findViewById(R.id.drawer_layout);

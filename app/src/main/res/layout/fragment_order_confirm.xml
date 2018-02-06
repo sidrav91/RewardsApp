@@ -59,7 +59,7 @@
         android:layout_below="@+id/textView12"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        app:srcCompat="@mipmap/tick" />
+        app:srcCompat="@mipmap/tick1" />
 
 
 </RelativeLayout>

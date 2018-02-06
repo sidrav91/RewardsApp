@@ -5,10 +5,20 @@
     android:orientation="vertical"
     android:background="@color/colorGrey">
 
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="0.25dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorLightGrey" />
+
     <SearchView
         android:id="@+id/searchView"
         android:layout_width="310dp"
-        android:layout_height="40dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/button"
         android:outlineProvider="bounds"
         android:queryHint="Search" />
@@ -17,8 +27,8 @@
         android:id="@+id/list_balance_text"
         android:layout_width="70dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/grid_products"
         android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/searchView"
         android:background="@color/colorGrey"
         android:fontFamily="@font/oswald_light"
         android:textColor="@color/colorLight"
@@ -35,7 +45,7 @@
         android:layout_marginLeft="20dp"
 
         android:layout_marginRight="20dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="50dp"
         android:background="@android:color/transparent"
         android:columnWidth="90dp"
         android:gravity="center"
@@ -48,7 +58,8 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/searchView">
+        android:layout_below="@+id/searchView"
+        android:id="@+id/horizontalScrollView2">
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -137,7 +148,25 @@
                 android:text="FUN"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="@dimen/redeem_nav_text" />
+
         </RelativeLayout>
     </HorizontalScrollView>
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="500dp"
+        android:layout_height="0.25dp"
+        android:layout_below="@+id/horizontalScrollView2"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorLightGrey" />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="500dp"
+        android:layout_height="0.25dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/list_balance_text"
+        android:layout_marginTop="5dp"
+        android:background="@color/colorLightGrey" />
 
 </RelativeLayout>

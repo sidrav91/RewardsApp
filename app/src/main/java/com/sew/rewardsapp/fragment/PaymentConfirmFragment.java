@@ -36,8 +36,10 @@ public class PaymentConfirmFragment extends Fragment implements View.OnClickList
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        Toolbar toolbar = (Toolbar) getActivity().findViewById(R.id.toolbar);
-        toolbar.setTitle("Checkout");
+        Typeface tfAbel = Typeface.createFromAsset(getActivity().getAssets(), "abel.ttf");
+        TextView textView1= (TextView) getActivity().findViewById(R.id.toolbar_title);
+        textView1.setText("Checkout");
+        textView1.setTypeface(tfAbel);
 
         setOnClickListenersForButtons(view);
         arial = Typeface.createFromAsset(getActivity().getAssets(), "arial.ttf");
@@ -53,7 +55,7 @@ public class PaymentConfirmFragment extends Fragment implements View.OnClickList
         TextView textView = getActivity().findViewById(R.id.subtotal_text);
         textView.setText("$"+MyData.subtotal);
         textView = getActivity().findViewById(R.id.points_text);
-        textView.setText("$"+MyData.point_used);
+        textView.setText("$"+MyData.pointUsed);
         textView = getActivity().findViewById(R.id.shipping_text);
         textView.setText("$"+MyData.shipping);
         textView = getActivity().findViewById(R.id.total_text);
@@ -120,8 +122,9 @@ public class PaymentConfirmFragment extends Fragment implements View.OnClickList
         //replacing the fragment
         if (fragment != null) {
             FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.content_frame, fragment);
+            ft.replace(R.id.content_frame, fragment).addToBackStack(null);
             ft.commit();
+            ft.addToBackStack(null);
         }
 
         DrawerLayout drawer = (DrawerLayout) getActivity().findViewById(R.id.drawer_layout);

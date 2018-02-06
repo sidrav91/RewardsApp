@@ -32,11 +32,12 @@ public class AboutFragment extends Fragment{
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         //you can set the title for your toolbar here for different fragments different titles
-        Toolbar toolbar = (Toolbar) getActivity().findViewById(R.id.toolbar);
-        toolbar.setTitle("About");
+        Typeface tfAbel = Typeface.createFromAsset(getActivity().getAssets(), "abel.ttf");
+        TextView textView1= (TextView) getActivity().findViewById(R.id.toolbar_title);
+        textView1.setText("About");
+        textView1.setTypeface(tfAbel);
 
         Typeface tfOswald = Typeface.createFromAsset(getActivity().getAssets(), "oswald.ttf");
-        Typeface tfAbel = Typeface.createFromAsset(getActivity().getAssets(), "abel.ttf");
         TextView text = (TextView) getView().findViewById(R.id.about_caption);
         text.setTypeface(tfOswald);
 

@@ -37,8 +37,8 @@ public class CustomPageAdapter extends PagerAdapter{
 
         switch(position) {
             case 1:
-                ImageView mImageView = (ImageView) layout.findViewById(R.id.image);
-                WaveDrawable mWaveDrawable = new WaveDrawable(mContext, R.drawable.glass1);
+                /*ImageView mImageView = (ImageView) layout.findViewById(R.id.image);
+                WaveDrawable mWaveDrawable = new WaveDrawable(mContext, R.drawable.picture4);
                 mImageView.setImageDrawable(mWaveDrawable);
                 Integer level = 4000;
                 Integer ampl = 7;
@@ -55,7 +55,7 @@ public class CustomPageAdapter extends PagerAdapter{
                 valueAnimator.setRepeatCount(ValueAnimator.INFINITE);
                 valueAnimator.setDuration(5000);
                 mWaveDrawable.setIndeterminateAnimator(valueAnimator);
-                mWaveDrawable.setIndeterminate(true);
+                mWaveDrawable.setIndeterminate(true);*/
                 TextView mTextView = (TextView) layout.findViewById(R.id.water_wave_amt);
                 mTextView.setTypeface(tfArial);
                 mTextView.setText(usage.toString() + " L");

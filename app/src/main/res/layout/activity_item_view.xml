@@ -5,15 +5,33 @@
     android:layout_height="match_parent"
     android:background="@color/colorGrey">
 
+    <View
+        android:id="@+id/view"
+        android:layout_width="500dp"
+        android:layout_height="0.25dp"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorLightGrey" />
+
     <TextView
         android:id="@+id/item_balance_text"
         android:layout_width="70dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
         android:fontFamily="@font/oswald_light"
         android:textColor="@color/colorLight"
         android:textDirection="firstStrongLtr"
         android:textSize="24sp" />
+
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="500dp"
+        android:layout_height="0.25dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/item_balance_text"
+        android:background="@color/colorLightGrey" />
 
     <TextView
         android:id="@+id/item_title"
@@ -21,6 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/item_balance_text"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
         android:text="TextView"
         android:textColor="@color/colorLightGrey"
         android:textSize="20sp" />
@@ -29,8 +48,7 @@
         android:id="@+id/frameLayout3"
         android:layout_width="match_parent"
         android:layout_height="280dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignStart="@+id/item_desc"
+        android:layout_alignEnd="@+id/textView2"
         android:layout_alignTop="@+id/item_img"
         android:background="@color/colorWhite">
 
@@ -42,10 +60,32 @@
         android:layout_height="250dp"
         android:layout_below="@+id/item_title"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="13dp"
         app:srcCompat="@mipmap/ic_launcher" />
 
-    <com.sew.rewardsapp.utils.ExpandableTextView
-        android:id="@+id/item_desc"
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_below="@+id/item_img"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="40dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/sample1"
+                layout="@layout/text_item" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <!--<com.sew.rewardsapp.utils.ExpandableTextView
+        android:id="@+id/expandable_text"
         android:layout_width="336dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/item_img"
@@ -56,7 +96,8 @@
         android:paddingRight="10sp"
         android:paddingTop="10sp"
         android:text="TextView"
-        android:textSize="14sp" />
+        android:textSize="14sp" />-->
+
     <SeekBar
         android:id="@+id/seekBar"
         style="@style/MySeekBar"
@@ -64,7 +105,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/final_cost"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="12dp"
         android:scrollbarSize="17dp"
         android:visibility="visible" />
 
@@ -104,6 +145,7 @@
         android:paddingBottom="5dp"
         android:paddingLeft="17dp"
         android:text="+"
+        android:textColor="@color/colorWhite"
         android:textSize="40sp" />
 
     <ImageView
@@ -119,7 +161,7 @@
         android:id="@+id/item_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/seekBar"
+        android:layout_alignBottom="@+id/seekBar"
         android:layout_toStartOf="@+id/seekBar"
         android:text="TextView"
         android:textColor="@color/colorWhite" />
@@ -132,6 +174,9 @@
         android:layout_toEndOf="@+id/seekBar"
         android:text="TextView"
         android:textColor="@color/colorLight" />
+
+
+
 
 
 </RelativeLayout>

@@ -1,6 +1,9 @@
 package com.sew.rewardsapp.activity;
 
+import android.app.FragmentManager;
+import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -17,6 +20,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
+import android.widget.TextView;
 
 import com.sew.rewardsapp.R;
 import com.sew.rewardsapp.fragment.OrdersFragment;
@@ -25,6 +29,7 @@ import com.sew.rewardsapp.fragment.AboutFragment;
 import com.sew.rewardsapp.fragment.HomeFragment;
 import com.sew.rewardsapp.fragment.SettingsFragment;
 import com.sew.rewardsapp.utils.CustomTypefaceSpan;
+import com.sew.rewardsapp.utils.MyData;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -36,7 +41,15 @@ public class MainActivity extends AppCompatActivity
 
 
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        toolbar.post(new Runnable() {
+            @Override
+            public void run() {
+                toolbar.setNavigationIcon(R.mipmap.menu_icon);
+            }
+        });
+
 
         getSupportActionBar().hide();
 
@@ -46,13 +59,14 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
+
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
 
         Menu m = navigationView.getMenu();
         for (int i=0;i<m.size();i++) {
             MenuItem mi = m.getItem(i);
 
-            //for aapplying a font to subMenu ...
+            //for applying a font to subMenu ...
             SubMenu subMenu = mi.getSubMenu();
             if (subMenu!=null && subMenu.size() >0 ) {
                 for (int j=0; j <subMenu.size();j++) {
@@ -65,6 +79,13 @@ public class MainActivity extends AppCompatActivity
             applyFontToMenuItem(mi);
         }
 
+        /*TextView text = findViewById(R.id.points_text);
+        text.setText(MyData.balance);
+        text = findViewById(R.id.redeemed_text);
+        text.setText(MyData.redeemedPoints);
+        text = findViewById(R.id.water_saved_text);
+        text.setText(MyData.waterSaved);*/
+
 
 
         navigationView.setNavigationItemSelectedListener(this);
@@ -76,7 +97,7 @@ public class MainActivity extends AppCompatActivity
     private void applyFontToMenuItem(MenuItem mi) {
         Typeface font = Typeface.createFromAsset(getAssets(), "oswald.ttf");
         SpannableString mNewTitle = new SpannableString(mi.getTitle());
-        mNewTitle.setSpan(new CustomTypefaceSpan("" , font), 0 , mNewTitle.length(),  Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        mNewTitle.setSpan(new CustomTypefaceSpan("" , font, getResources().getColor(R.color.colorLightGrey)), 0 , mNewTitle.length(),  Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         mi.setTitle(mNewTitle);
     }
 
@@ -88,6 +109,7 @@ public class MainActivity extends AppCompatActivity
         } else {
             super.onBackPressed();
         }
+
     }
 
     @Override
@@ -158,8 +180,9 @@ public class MainActivity extends AppCompatActivity
         //replacing the fragment
         if (fragment != null) {
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.content_frame, fragment);
+            ft.replace(R.id.content_frame, fragment).addToBackStack(null);
             ft.commit();
+            ft.addToBackStack(null);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

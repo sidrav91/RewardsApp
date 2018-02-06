@@ -5,7 +5,6 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
@@ -15,12 +14,11 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.ms.square.android.expandabletextview.ExpandableTextView;
 import com.sew.rewardsapp.R;
 import com.sew.rewardsapp.pojo.CartItem;
 import com.sew.rewardsapp.pojo.RewardItem;
 import com.sew.rewardsapp.utils.MyData;
-
-import org.w3c.dom.Text;
 
 /**
  * Created by siddharthkumar on 3/1/18.
@@ -37,24 +35,33 @@ public class ItemViewFragment extends Fragment{
         //returning our layout file
         //change R.layout.yourlayoutfilename for each of your fragments
         rewardItem = MyData.buffer;
-        return inflater.inflate(R.layout.activity_item_view, container, false);
+        View rootView = inflater.inflate(R.layout.activity_item_view, container, false);
+        return rootView;
     }
 
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Toolbar toolbar = (Toolbar) getActivity().findViewById(R.id.toolbar);
-        toolbar.setTitle("Redeem");
+        Typeface tfAbel = Typeface.createFromAsset(getActivity().getAssets(), "abel.ttf");
+        TextView textView1= (TextView) getActivity().findViewById(R.id.toolbar_title);
+        textView1.setText("Redeem");
+        textView1.setTypeface(tfAbel);
 
 
         TextView title = getActivity().findViewById(R.id.item_title);
         title.setText(rewardItem.getName());
         title.setTypeface(Typeface.createFromAsset(getActivity().getAssets(), "arial.ttf"));
 
-        TextView desc = getActivity().findViewById(R.id.item_desc);
-        desc.setText(rewardItem.getDescription());
-        desc.setTypeface(Typeface.createFromAsset(getActivity().getAssets(), "arial.ttf"));
+        ExpandableTextView expTv1 = (ExpandableTextView) view.findViewById(R.id.sample1)
+                .findViewById(R.id.expand_text_view);
+        expTv1.setText(rewardItem.getDescription());
+        //expTv1.setTypeface(Typeface.createFromAsset(getActivity().getAssets(), "arial.ttf"));
+
+
+        /*ExpandableTextView desc = (ExpandableTextView) getActivity().findViewById(R.id.expandable_text);
+        desc.setText(rewardItem.getDescription());*/
+        //desc.setTypeface(Typeface.createFromAsset(getActivity().getAssets(), "arial.ttf"));
 
         ImageView img = getActivity().findViewById(R.id.item_img);
         img.setImageResource(rewardItem.getImageResource());
@@ -126,6 +133,8 @@ public class ItemViewFragment extends Fragment{
         TextView pointsUsedText = getActivity().findViewById(R.id.points_used);
         pointsUsedText.setText("+"+ pointUsed +"Pts");
 
+
+
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
@@ -165,14 +174,17 @@ public class ItemViewFragment extends Fragment{
                 Fragment fragment = new OrdersFragment();
                 if (fragment != null) {
                     FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-                    ft.add(R.id.content_frame, fragment);
+                    ft.replace(R.id.content_frame, fragment).addToBackStack(null);
                     ft.commit();
+                    ft.addToBackStack(null);
                 }
 
             /*DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
             drawer.closeDrawer(GravityCompat.START);*/
             }
         });
+
+        seekBar.setProgress(seekBar.getMax());
 
 
 
